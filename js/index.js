@@ -7,9 +7,7 @@ var bookmarks = [];
 
 if (localStorage.getItem("bookmarksList")) {
   bookmarks = JSON.parse(localStorage.getItem("bookmarksList"));
-  for (var x = 0; x < bookmarks.length; x++) {
-    displayBookmark(x);
-  }
+  displayBookmark();
 }
 
 tableContent.addEventListener("click", function (e) {
