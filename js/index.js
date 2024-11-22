@@ -74,15 +74,14 @@ submitBtn.addEventListener("click", function () {
 });
 
 function deleteBookmark(e) {
-  tableContent.innerHTML = "";
-  var deletedIndex = e.target.id;
+  var deletedIndex = e.target.closest("button").id;
   bookmarks.splice(deletedIndex, 1);
   displayBookmark();
   localStorage.setItem("bookmarksList", JSON.stringify(bookmarks));
 }
 
 function visitWebsite(e) {
-  var websiteIndex = e.target.id;
+  var websiteIndex = e.target.closest("button").id;
   open(bookmarks[websiteIndex].siteURL);
 }
 
